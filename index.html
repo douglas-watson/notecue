@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Note cue</title>
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+    crossorigin="anonymous"></script>
+</head>
+<body style="text-align: center">
+    <h1>Play the note:</h1>
+    <p id="note-display" style="font-size: 100px">D</p>
+</body>
+<script>
+Array.prototype.randomElement = function () {
+    return this[Math.floor(Math.random() * this.length)]
+}
+
+var interval = 1.0 * 1000;
+var notes = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+
+function picknote() {
+    $('#note-display').html(notes.randomElement());
+}
+setInterval(picknote, interval);
+</script>
